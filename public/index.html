@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Тестовое задание</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <p class="header__text">Тестовое задание</p>
+      <div class="header__logo">
+        <a href="https://grapheme.ru/" class="header__logo-link" target="_blank">
+          <img src="images/grapheme.svg" alt="Grapheme." class="header__logo-img">
+        </a>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="order">
+      <div class="container order__container">
+        <div class="order__main">
+          <div class="order__screen order__screen_form">
+            <form class="order__form form">
+              <div class="form__header">
+                <ul class="form__step-names">
+                  <li class="form__step-name form__step-name_current">
+                    <p class="form__step-text">Доставка</p>
+                  </li>
+                  <li class="form__step-name">
+                    <p class="form__step-text">Оплата</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="form__main">
+                <div class="form__screen form__screen_delivery">
+                  <h2 class="form__screen-text heading heading_h2">Информация для доставки</h2>
+                  <div class="form__block">
+                    <div class="form__field-wrapper">
+                      <label for="name" class="form__field-label">
+                        Получатель
+                      </label>
+                      <input class="form__field-input" type="text" placeholder="ФИО" name="name" id="name">
+                    </div>
+                  </div>
+                  <div class="form__block">
+                    <fieldset class="form__fieldset">
+                      <legend class="form__legend">Адрес</legend>
+                      <div class="form__field-wrapper">
+                        <label for="name">
+                          <input class="form__field-input" type="text" placeholder="Город" name="city">
+                        </label>
+                      </div>
+                      <div class="form__field-wrapper">
+                        <label>
+                          <input class="form__field-input" type="text" placeholder="Адрес" name="address">
+                        </label>
+                      </div>
+                      <div class="form__field-wrapper form__field-wrapper_select">
+                        <label for="country">
+                          <select class="form__field-select" name="country" aria-placeholder="Страна">
+                            <option value="" disabled selected>Страна</option>
+                            <option value="rus">Россия</option>
+                            <option value="ukr">Украина</option>
+                            <option value="kaz">Казахстан</option>
+                          </select>
+                        </label>
+                      </div>
+                      <div class="form__field-wrapper form__field-wrapper_index">
+                        <label>
+                          <input class="form__field-input" type="text" placeholder="Индекс" name="streetcode" id="index" name="index">
+                        </label>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="form__button-wrapper">
+                    <button type="button" class="form__button" data-form="next">Продолжить</button>
+                  </div>
+                </div>
+                <div class="form__screen form__screen_payment">
+                  <h2 class="form__screen-text heading heading_h2">Оплата</h2>
+                  <div class="form__block">
+                    <div class="form__field-wrapper">
+                      <label for="cardname"  class="form__field-label">
+                        Имя на&nbsp;карте
+                      </label>
+                      <input class="form__field-input" type="text" placeholder="Konstantin Ivanov" name="cardname" id="cardname">
+                    </div>
+                  </div>
+                  <div class="form__block">
+                    <div class="form__field-wrapper">
+                      <label for="cardnumber" class="form__field-label">
+                        Номер карты
+                      </label>
+                      <input class="form__field-input"type="text" placeholder="XXXX XXXX XXXX XXXX" id="cardnumber" name="cardnumber">
+                    </div>
+                  </div>
+                  <div class="form__block">
+                    <div class="form__field-wrapper form__field-wrapper_card-expire">
+                      <label for="cardexpires" class="form__field-label">
+                        Срок
+                      </label>
+                      <input class="form__field-input"type="text" placeholder="MM / YY" name="cardexpires" id="cardexpires">
+                    </div>
+                    <div class="form__field-wrapper  form__field-wrapper_card-cvv">
+                      <label for="cvv" class="form__field-label">
+                        CVV
+                      </label>
+                      <input class="form__field-input" type="password" maxlength="3" minlength="3" name="cvv" id="cvv">
+                    </div>
+                  </div>
+                  <div class="form__button-wrapper">
+                    <button type="button" class="form__button" data-form="pay">Оплатить</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="order__screen order__screen_success">
+            <div class="order__success">
+              <p class="order__success-text">Спасибо!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="libs/inputmask.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

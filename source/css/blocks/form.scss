@@ -1,0 +1,175 @@
+.form {
+  position: relative;
+
+  &__header {
+    position: absolute;
+    top: 17px;
+    left: 40px;
+    z-index: 10;
+  }
+
+  &__step-names {
+    display: flex;
+    align-items: center;
+  }
+
+  &__step-name {
+    &:not(:last-child) {
+      position: relative;
+      margin-right: 40px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -20px;
+        transform: translate(25%, -50%) rotate(45deg);
+        border-color: $fade;
+        border-top: 1px solid;
+        border-right: 1px solid;
+        width: 12px;
+        height: 12px;
+        opacity: 0.3;
+      }
+    }
+
+    &_current {
+      .form__step-text {
+        color: $accent;
+      }
+    }
+  }
+
+  &__step-text {
+    font-size: 12px;
+    line-height: 14px;
+    color: $fade;
+    font-weight: 400;
+  } 
+
+  &__main {
+    max-width: 400px;
+    display: flex;
+    transition: transform 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+
+    &_next {
+      transform: translateX(-100%);
+    }
+  }
+
+  &__screen {
+    min-width: 400px;
+    padding: 67px 40px;
+    flex-basis: 100%;
+  }
+
+  &__screen-text {
+    letter-spacing: -0.2pt;
+    color: $accent;
+    font-weight: $fontWeight;
+    margin-bottom: 20px;
+  }
+
+  &__block {
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__field-wrapper {
+    width: 100%;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &_select {
+      position: relative;
+      width: 65%;
+
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        transform-origin: center;
+        width: 12px;
+        height: 12px;
+        background-image: url('./images/arrow-down.svg');
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+
+    &_index {
+      width: 30%;
+    }
+
+    &_card-expire, &_card-cvv {
+      display: inline-block;
+      width: 95px;
+    }
+
+    &_card-expire {
+      margin-right: 30px;
+    }
+  }
+
+  &__field-label, &__legend {
+    color: $accent;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  &__field-input, &__field-select {
+    width: 100%;
+    padding: 11px 15px;
+    border-radius: 5px;
+    border: 1px solid $border;
+
+    &:placeholder {
+      opacity: 1;
+      color: $placeholder;
+      font-weight: $fontWeight;
+    }
+
+    &.error {
+      border-color: $error;
+    }
+  }
+
+  &__field-select {
+    option:disabled {
+      color: $placeholder
+    }
+  }
+
+  &__fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    margin-bottom: -10px;
+    padding: 0;
+    border: none;
+  }
+
+  &__button {
+    display: block;
+    margin: 0;
+    padding: 12px 40px;
+    background: $button;
+    color: $bgWhite;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+}
